@@ -29,27 +29,17 @@ public class Course {
         return enrolledStudents;
     }
 
-    public boolean checkDuplicateStudentEnrollment(Student student) {
-        return enrolledStudents.contains(student);
-    }
-
     public void addStudent(Student student) {
 
-        if (!checkDuplicateStudentEnrollment(student)) {
+        if (enrolledStudents.size() != capacity) {
             enrolledStudents.add(student);
-        } else {
-            System.out.println ("This student is Already Enrolled");
         }
     }
-
-    public boolean isCourseFull() {
-        return capacity == enrolledStudents.size();
-    }
-
     public void printCourseDetails() {
         System.out.println("Course ID : "+id);
         System.out.println("Course Name : "+name);
         System.out.println("Capacity : "+capacity);
+        System.out.println("Enrollment count : "+enrolledStudents.size());
         System.out.println("\nEnrolled Students : ");
         for (Student student : enrolledStudents) {
             System.out.println ("Student ID : "+student.getId());

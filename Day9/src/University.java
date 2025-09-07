@@ -32,8 +32,8 @@ public class University {
 
         for (Student student : students) {
             if (student.getId() == studentID && isCourseAvailable) {
-                student.enrollCourse(courses.get(index));
                 courses.get(index).addStudent(student);
+                student.enrollCourse(courses.get(index));
             }
         }
 
@@ -42,10 +42,6 @@ public class University {
     public Course findCourseWithMaxEnrollment(int index,int topIndex) {
 
         if (index == courses.size()) {
-            return null;
-        }
-
-        if (index == courses.size()-1) {
             return courses.get(topIndex);
         }
 

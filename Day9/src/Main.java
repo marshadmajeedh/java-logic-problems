@@ -21,8 +21,9 @@ public class Main {
         uni.enrollStudentInCourse(1,101);
         uni.enrollStudentInCourse(2,102);
         uni.enrollStudentInCourse(3,103);
+        uni.enrollStudentInCourse(2,103);
 
-        Course maximumEnrolledStudentCourse = uni.findCourseWithMaxEnrollment(0,1);
+        Course maximumEnrolledStudentCourse = uni.findCourseWithMaxEnrollment(1,0);
 
         System.out.println("Course has the maximum amount of enrollment: ");
         maximumEnrolledStudentCourse.printCourseDetails();
